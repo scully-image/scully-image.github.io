@@ -25,7 +25,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     !*** /Users/cmgriffing/repos/scully-plugin-image-sharp/dist/scully-image/fesm2015/scully-image.js ***!
     \****************************************************************************************************/
 
-  /*! exports provided: PreloaderTypes, PrimitivesShapes, SCULLY_IMAGE_URL_MAP, ScullyBlurImageComponent, ScullyImageComponent, ScullyImageModule, ScullyPrimitivesImageComponent, ScullyTracedImageComponent, tracedTurnPolicies, ɵa */
+  /*! exports provided: PreloaderTypes, PrimitivesShapes, SCULLY_IMAGE_URL_MAP, ScullyBlurImageComponent, ScullyImageComponent, ScullyImageModule, ScullyPixelsImageComponent, ScullyPrimitivesImageComponent, ScullyTracedImageComponent, tracedTurnPolicies, ɵa */
 
   /***/
   function distScullyImageFesm2015ScullyImageJs(module, __webpack_exports__, __webpack_require__) {
@@ -67,6 +67,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     __webpack_require__.d(__webpack_exports__, "ScullyImageModule", function () {
       return ScullyImageModule;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ScullyPixelsImageComponent", function () {
+      return ScullyPixelsImageComponent;
     });
     /* harmony export (binding) */
 
@@ -195,6 +201,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       PreloaderTypes["blur"] = "base64";
       PreloaderTypes["tracedSVG"] = "tracedSVG";
       PreloaderTypes["primitives"] = "primitives";
+      PreloaderTypes["pixels"] = "pixels";
     })(PreloaderTypes || (PreloaderTypes = {}));
 
     var FULL = 'full';
@@ -222,7 +229,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var SCULLY_IMAGE_URL_MAP = 'scullyImageUrlMap';
     var template = "\n<img\n  [style.height]=\"getHeight()\"\n  [style.width]=\"getWidth()\"\n  [class.blurred]=\"preloader === PreloaderTypes.blur && !imageLoaded\"\n  [class.loaded]=\"imageLoaded\"\n  class=\"preloaded-image\"\n  data-scully-image=\"something\"\n  [src]=\"preloadedSrc\"\n/>\n<img\n  [style.height]=\"getHeight()\"\n  [style.width]=\"getWidth()\"\n  [class.blurred]=\"preloader === PreloaderTypes.blur && !imageLoaded\"\n  [class.loaded]=\"imageLoaded\"\n  class=\"preloaded-image-fade-hack\"\n  data-scully-image=\"something\"\n  [src]=\"preloadedSrc\"\n/>\n<img\n  [style.height]=\"getHeight()\"\n  [style.width]=\"getWidth()\"\n  [class.loaded]=\"imageLoaded\"\n  class=\"loaded-image\"\n  [src]=\"loadedSrc\"\n  [class.blurred]=\"preloader === PreloaderTypes.blur && !imageLoaded\"\n/>\n";
-    var componentStyles = "\n:host {\n  position: relative;\n  display: block;\n  overflow: hidden;\n}\n\n:host img {\n  transition: opacity 300ms, filter 300ms;\n  width: 100%;\n  height: auto;\n}\n\n:host .preloaded-image {\n  z-index: 3;\n  opacity: 1;\n}\n\n:host .preloaded-image.loaded {\n  opacity: 0;\n}\n\n:host .preloaded-image-fade-hack {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 3;\n  opacity: 1;\n}\n\n:host .preloaded-image-fade-hack.loaded {\n  opacity: 0;\n}\n\n:host .loaded-image {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 2;\n  opacity: 0;\n}\n\n:host .loaded-image.loaded {\n  opacity: 1;\n}\n\n.blurred {\n  filter: blur(20px);\n}\n";
+    var componentStyles = "\n:host {\n  position: relative;\n  display: block;\n  overflow: hidden;\n}\n\n:host img {\n  transition: opacity 300ms, filter 300ms;\n  width: 100%;\n  height: auto;\n}\n\n:host .preloaded-image {\n  z-index: 3;\n  opacity: 1;\n}\n\n:host .preloaded-image.loaded {\n  opacity: 0;\n}\n\n:host .preloaded-image-fade-hack {\n  position: absolute;\n  pointer-events: none;\n  top: 0;\n  left: 0;\n  z-index: 3;\n  opacity: 1;\n}\n\n:host .preloaded-image-fade-hack.loaded {\n  opacity: 0;\n}\n\n:host .loaded-image {\n  position: absolute;\n  top: 0;\n  left: 0;\n  z-index: 2;\n  opacity: 0;\n}\n\n:host .loaded-image.loaded {\n  opacity: 1;\n}\n\n.blurred {\n  filter: blur(20px);\n}\n";
 
     var ScullyImageComponent = /*#__PURE__*/function () {
       function ScullyImageComponent(transferState, sanitizer, visibilityService, elementRef) {
@@ -279,6 +286,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
               if (_this.preloader === PreloaderTypes.primitives) {
                 _this.preloadedSrc = _this.sanitizer.bypassSecurityTrustResourceUrl(_this.preloadedSrc);
               } else if (_this.preloader === PreloaderTypes.tracedSVG) {
+                _this.preloadedSrc = _this.sanitizer.bypassSecurityTrustResourceUrl(_this.preloadedSrc);
+              } else if (_this.preloader === PreloaderTypes.pixels) {
                 _this.preloadedSrc = _this.sanitizer.bypassSecurityTrustResourceUrl(_this.preloadedSrc);
               }
 
@@ -572,7 +581,68 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       template: template,
       styles: [componentStyles]
     })], ScullyPrimitivesImageComponent);
-    var exportedComponents = [ScullyBlurImageComponent, ScullyTracedImageComponent, ScullyPrimitivesImageComponent];
+
+    var ScullyPixelsImageComponent = /*#__PURE__*/function (_ScullyImageComponent4) {
+      _inherits(ScullyPixelsImageComponent, _ScullyImageComponent4);
+
+      var _super4 = _createSuper(ScullyPixelsImageComponent);
+
+      function ScullyPixelsImageComponent() {
+        var _this6;
+
+        _classCallCheck(this, ScullyPixelsImageComponent);
+
+        _this6 = _super4.apply(this, arguments);
+        _this6.preloader = PreloaderTypes.pixels;
+        return _this6;
+      }
+
+      _createClass(ScullyPixelsImageComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.baseInit();
+        }
+      }, {
+        key: "ngOnDestroy",
+        value: function ngOnDestroy() {
+          this.baseOnDestroy();
+        }
+      }, {
+        key: "height",
+        get: function get() {
+          return this.getHeight();
+        }
+      }, {
+        key: "width",
+        get: function get() {
+          return this.getWidth();
+        }
+      }, {
+        key: "type",
+        get: function get() {
+          return this.preloader;
+        }
+      }, {
+        key: "pluginOptionsAsString",
+        get: function get() {
+          return JSON.stringify(this.pluginOptions);
+        }
+      }]);
+
+      return ScullyPixelsImageComponent;
+    }(ScullyImageComponent);
+
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()], ScullyPixelsImageComponent.prototype, "preloader", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('style.height')], ScullyPixelsImageComponent.prototype, "height", null);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('style.width')], ScullyPixelsImageComponent.prototype, "width", null);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('attr.data-type')], ScullyPixelsImageComponent.prototype, "type", null);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('attr.data-plugin-options')], ScullyPixelsImageComponent.prototype, "pluginOptionsAsString", null);
+    ScullyPixelsImageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'scully-pixels-image',
+      template: template,
+      styles: [componentStyles]
+    })], ScullyPixelsImageComponent);
+    var exportedComponents = [ScullyBlurImageComponent, ScullyTracedImageComponent, ScullyPrimitivesImageComponent, ScullyPixelsImageComponent];
 
     var ScullyImageModule = function ScullyImageModule() {
       _classCallCheck(this, ScullyImageModule);
@@ -1147,12 +1217,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AppComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this6 = this;
+          var _this7 = this;
 
           this.router.events.subscribe(function (event) {
             if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_0__["NavigationEnd"]) {
-              _this6.isHome = event.url === '/';
-              _this6.isExamplePage = event.url.indexOf('/examples/') > -1;
+              _this7.isHome = event.url === '/';
+              _this7.isExamplePage = event.url.indexOf('/examples/') > -1;
             }
           });
         }

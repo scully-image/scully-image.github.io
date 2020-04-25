@@ -4,7 +4,7 @@
 /*!****************************************************************************************************!*\
   !*** /Users/cmgriffing/repos/scully-plugin-image-sharp/dist/scully-image/fesm2015/scully-image.js ***!
   \****************************************************************************************************/
-/*! exports provided: PreloaderTypes, PrimitivesShapes, SCULLY_IMAGE_URL_MAP, ScullyBlurImageComponent, ScullyImageComponent, ScullyImageModule, ScullyPrimitivesImageComponent, ScullyTracedImageComponent, tracedTurnPolicies, ɵa */
+/*! exports provided: PreloaderTypes, PrimitivesShapes, SCULLY_IMAGE_URL_MAP, ScullyBlurImageComponent, ScullyImageComponent, ScullyImageModule, ScullyPixelsImageComponent, ScullyPrimitivesImageComponent, ScullyTracedImageComponent, tracedTurnPolicies, ɵa */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,6 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyBlurImageComponent", function() { return ScullyBlurImageComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyImageComponent", function() { return ScullyImageComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyImageModule", function() { return ScullyImageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyPixelsImageComponent", function() { return ScullyPixelsImageComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyPrimitivesImageComponent", function() { return ScullyPrimitivesImageComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScullyTracedImageComponent", function() { return ScullyTracedImageComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tracedTurnPolicies", function() { return tracedTurnPolicies; });
@@ -67,6 +68,7 @@ var PreloaderTypes;
     PreloaderTypes["blur"] = "base64";
     PreloaderTypes["tracedSVG"] = "tracedSVG";
     PreloaderTypes["primitives"] = "primitives";
+    PreloaderTypes["pixels"] = "pixels";
 })(PreloaderTypes || (PreloaderTypes = {}));
 const FULL = 'full';
 var PrimitivesShapes;
@@ -140,6 +142,7 @@ const componentStyles = `
 
 :host .preloaded-image-fade-hack {
   position: absolute;
+  pointer-events: none;
   top: 0;
   left: 0;
   z-index: 3;
@@ -219,6 +222,9 @@ let ScullyImageComponent = class ScullyImageComponent {
                     this.preloadedSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.preloadedSrc);
                 }
                 else if (this.preloader === PreloaderTypes.tracedSVG) {
+                    this.preloadedSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.preloadedSrc);
+                }
+                else if (this.preloader === PreloaderTypes.pixels) {
                     this.preloadedSrc = this.sanitizer.bypassSecurityTrustResourceUrl(this.preloadedSrc);
                 }
                 const fullSizeImageUrl = scullyImageUrlMap[this.getImageKey(FULL)] || this.src;
@@ -459,11 +465,58 @@ ScullyPrimitivesImageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__de
         styles: [componentStyles]
     })
 ], ScullyPrimitivesImageComponent);
+let ScullyPixelsImageComponent = class ScullyPixelsImageComponent extends ScullyImageComponent {
+    constructor() {
+        super(...arguments);
+        this.preloader = PreloaderTypes.pixels;
+    }
+    get height() {
+        return this.getHeight();
+    }
+    get width() {
+        return this.getWidth();
+    }
+    get type() {
+        return this.preloader;
+    }
+    get pluginOptionsAsString() {
+        return JSON.stringify(this.pluginOptions);
+    }
+    ngOnInit() {
+        this.baseInit();
+    }
+    ngOnDestroy() {
+        this.baseOnDestroy();
+    }
+};
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+], ScullyPixelsImageComponent.prototype, "preloader", void 0);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('style.height')
+], ScullyPixelsImageComponent.prototype, "height", null);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('style.width')
+], ScullyPixelsImageComponent.prototype, "width", null);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('attr.data-type')
+], ScullyPixelsImageComponent.prototype, "type", null);
+Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["HostBinding"])('attr.data-plugin-options')
+], ScullyPixelsImageComponent.prototype, "pluginOptionsAsString", null);
+ScullyPixelsImageComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'scully-pixels-image',
+        template,
+        styles: [componentStyles]
+    })
+], ScullyPixelsImageComponent);
 
 const exportedComponents = [
     ScullyBlurImageComponent,
     ScullyTracedImageComponent,
     ScullyPrimitivesImageComponent,
+    ScullyPixelsImageComponent,
 ];
 let ScullyImageModule = class ScullyImageModule {
 };
