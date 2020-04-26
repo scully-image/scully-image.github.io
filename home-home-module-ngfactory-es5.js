@@ -2583,7 +2583,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _ck(_v, 91, 0, currVal_20);
 
-        var currVal_23 = "/docs/examples/blur";
+        var currVal_23 = "/examples/blur";
 
         _ck(_v, 94, 0, currVal_23);
 
@@ -2591,7 +2591,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _ck(_v, 105, 0, currVal_25);
 
-        var currVal_28 = "/docs/examples/traced";
+        var currVal_28 = "/examples/traced";
 
         _ck(_v, 108, 0, currVal_28);
 
@@ -2599,7 +2599,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _ck(_v, 118, 0, currVal_30);
 
-        var currVal_33 = "/docs/examples/primitives";
+        var currVal_33 = "/examples/primitives";
 
         _ck(_v, 121, 0, currVal_33);
 
@@ -2607,7 +2607,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _ck(_v, 131, 0, currVal_35);
 
-        var currVal_38 = "/docs/examples/pixels";
+        var currVal_38 = "/examples/pixels";
 
         _ck(_v, 134, 0, currVal_38);
       }, function (_ck, _v) {

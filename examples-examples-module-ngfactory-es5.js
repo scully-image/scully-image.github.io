@@ -205,6 +205,36 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     }
 
     function View_ExamplesComponent_3(_l) {
+      return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 2, "scully-traced-image", [["src", "/assets/scully.jpeg"]], [[4, "height", null], [4, "width", null], [1, "data-type", 0], [1, "data-plugin-options", 0]], null, null, _dist_scully_image_scully_image_ngfactory__WEBPACK_IMPORTED_MODULE_2__["View_ScullyTracedImageComponent_0"], _dist_scully_image_scully_image_ngfactory__WEBPACK_IMPORTED_MODULE_2__["RenderType_ScullyTracedImageComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 770048, null, 0, scully_image__WEBPACK_IMPORTED_MODULE_3__["ScullyTracedImageComponent"], [_scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_4__["TransferStateService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"], scully_image__WEBPACK_IMPORTED_MODULE_3__["ɵa"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]], {
+        src: [0, "src"],
+        fluidMaxWidth: [1, "fluidMaxWidth"],
+        pluginOptions: [2, "pluginOptions"]
+      }, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpod"](2, {
+        color: 0,
+        optTolerance: 1,
+        turdSize: 2,
+        turnPolicy: 3
+      })], function (_ck, _v) {
+        var currVal_4 = "/assets/scully.jpeg";
+        var currVal_5 = 800;
+
+        var currVal_6 = _ck(_v, 2, 0, "#3AA860", 0.4, 10, "majority");
+
+        _ck(_v, 1, 0, currVal_4, currVal_5, currVal_6);
+      }, function (_ck, _v) {
+        var currVal_0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 1).height;
+
+        var currVal_1 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 1).width;
+
+        var currVal_2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 1).type;
+
+        var currVal_3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 1).pluginOptionsAsString;
+
+        _ck(_v, 0, 0, currVal_0, currVal_1, currVal_2, currVal_3);
+      });
+    }
+
+    function View_ExamplesComponent_4(_l) {
       return _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵvid"](0, [(_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](0, 0, null, null, 1, "scully-pixels-image", [["src", "/assets/scully.jpeg"]], [[4, "height", null], [4, "width", null], [1, "data-type", 0], [1, "data-plugin-options", 0]], null, null, _dist_scully_image_scully_image_ngfactory__WEBPACK_IMPORTED_MODULE_2__["View_ScullyPixelsImageComponent_0"], _dist_scully_image_scully_image_ngfactory__WEBPACK_IMPORTED_MODULE_2__["RenderType_ScullyPixelsImageComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](1, 770048, null, 0, scully_image__WEBPACK_IMPORTED_MODULE_3__["ScullyPixelsImageComponent"], [_scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_4__["TransferStateService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"], scully_image__WEBPACK_IMPORTED_MODULE_3__["ɵa"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]], {
         src: [0, "src"]
       }, null)], function (_ck, _v) {
@@ -229,16 +259,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         ngIf: [0, "ngIf"]
       }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\n\n"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_ExamplesComponent_2)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](4, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], {
         ngIf: [0, "ngIf"]
-      }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\n\n"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵeld"](6, 0, null, null, 2, "scully-traced-image", [["src", "/assets/scully.jpeg"]], [[4, "height", null], [4, "width", null], [1, "data-type", 0], [1, "data-plugin-options", 0]], null, null, _dist_scully_image_scully_image_ngfactory__WEBPACK_IMPORTED_MODULE_2__["View_ScullyTracedImageComponent_0"], _dist_scully_image_scully_image_ngfactory__WEBPACK_IMPORTED_MODULE_2__["RenderType_ScullyTracedImageComponent"])), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](7, 770048, null, 0, scully_image__WEBPACK_IMPORTED_MODULE_3__["ScullyTracedImageComponent"], [_scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_4__["TransferStateService"], _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__["DomSanitizer"], scully_image__WEBPACK_IMPORTED_MODULE_3__["ɵa"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]], {
-        src: [0, "src"],
-        fluidMaxWidth: [1, "fluidMaxWidth"],
-        pluginOptions: [2, "pluginOptions"]
-      }, null), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵpod"](8, {
-        color: 0,
-        optTolerance: 1,
-        turdSize: 2,
-        turnPolicy: 3
-      }), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\n\n"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_ExamplesComponent_3)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](11, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], {
+      }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\n\n"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_ExamplesComponent_3)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](7, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], {
+        ngIf: [0, "ngIf"]
+      }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\n\n"])), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵand"](16777216, null, null, 1, null, View_ExamplesComponent_4)), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵdid"](10, 16384, null, 0, _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], [_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewContainerRef"], _angular_core__WEBPACK_IMPORTED_MODULE_1__["TemplateRef"]], {
         ngIf: [0, "ngIf"]
       }, null), (_l()(), _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵted"](-1, null, ["\n"]))], function (_ck, _v) {
         var _co = _v.component;
@@ -250,27 +273,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         _ck(_v, 4, 0, currVal_1);
 
-        var currVal_6 = "/assets/scully.jpeg";
-        var currVal_7 = 800;
+        var currVal_2 = _co.exampleType === "traced";
 
-        var currVal_8 = _ck(_v, 8, 0, "#3AA860", 0.4, 10, "majority");
+        _ck(_v, 7, 0, currVal_2);
 
-        _ck(_v, 7, 0, currVal_6, currVal_7, currVal_8);
+        var currVal_3 = _co.exampleType === "pixels";
 
-        var currVal_9 = _co.exampleType === "pixels";
-
-        _ck(_v, 11, 0, currVal_9);
-      }, function (_ck, _v) {
-        var currVal_2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).height;
-
-        var currVal_3 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).width;
-
-        var currVal_4 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).type;
-
-        var currVal_5 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵnov"](_v, 7).pluginOptionsAsString;
-
-        _ck(_v, 6, 0, currVal_2, currVal_3, currVal_4, currVal_5);
-      });
+        _ck(_v, 10, 0, currVal_3);
+      }, null);
     }
 
     function View_ExamplesComponent_Host_0(_l) {
