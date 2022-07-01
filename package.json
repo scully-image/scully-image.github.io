@@ -1,0 +1,48 @@
+{
+  "name": "scully-image",
+  "version": "0.5.0",
+  "dependencies": {
+    "sharp": "^0.25.2",
+    "potrace": "2.1.5",
+    "imagemin": "^7.0.1",
+    "imagemin-pngquant": "^8.0.0",
+    "uuid": "^3.4.0",
+    "svgo": "^1.3.2",
+    "mini-svg-data-uri": "^1.1.3",
+    "primitive": "^1.0.1",
+    "file-type": "^9.0.0",
+    "isurl": "^4.0.1",
+    "svgdom": "^0.0.21",
+    "@svgdotjs/svg.js": "^3.0.16",
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^13.0.0",
+    "@angular/core": "^13.0.0",
+    "@scullyio/scully": "^2.0.3",
+    "@scullyio/ng-lib": "^2.0.2"
+  },
+  "exports": {
+    "./plugin": {
+      "default": "./plugin/index.js"
+    },
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./scully-image.d.ts",
+      "esm2020": "./esm2020/scully-image.mjs",
+      "es2020": "./fesm2020/scully-image.mjs",
+      "es2015": "./fesm2015/scully-image.mjs",
+      "node": "./fesm2015/scully-image.mjs",
+      "default": "./fesm2020/scully-image.mjs"
+    }
+  },
+  "module": "fesm2015/scully-image.mjs",
+  "es2020": "fesm2020/scully-image.mjs",
+  "esm2020": "esm2020/scully-image.mjs",
+  "fesm2020": "fesm2020/scully-image.mjs",
+  "fesm2015": "fesm2015/scully-image.mjs",
+  "typings": "scully-image.d.ts",
+  "sideEffects": false
+}
