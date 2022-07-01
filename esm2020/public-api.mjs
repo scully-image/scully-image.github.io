@@ -1,6 +1,0 @@
-/*
- * Public API Surface of scully-image
- */
-export * from './lib/scully-image.component';
-export * from './lib/scully-image.module';
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3Byb2plY3RzL3NjdWxseS1pbWFnZS9zcmMvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsOEJBQThCLENBQUM7QUFDN0MsY0FBYywyQkFBMkIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2Ygc2N1bGx5LWltYWdlXG4gKi9cblxuZXhwb3J0ICogZnJvbSAnLi9saWIvc2N1bGx5LWltYWdlLmNvbXBvbmVudCc7XG5leHBvcnQgKiBmcm9tICcuL2xpYi9zY3VsbHktaW1hZ2UubW9kdWxlJztcbiJdfQ==
